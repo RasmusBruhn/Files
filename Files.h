@@ -66,7 +66,7 @@ union __FIL_Value {
 
 #define FIL_FORMAT_INT ((sizeof(long int) == 4) ? ("%s%lld") : ("%s%ld"))
 #define FIL_FORMAT_UINT ((sizeof(long int) == 4) ? ("%s%llu") : ("%s%lu"))
-#define FIL_FORMAT_FLOAT "%s%f"
+#define FIL_FORMAT_FLOAT "%s%g"
 #define FIL_FORMAT_NEWLINE "\n"
 
 // Loads the entirety of the file into a string
