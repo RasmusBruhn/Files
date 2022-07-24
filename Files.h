@@ -144,7 +144,7 @@ char *FIL_Load(const char *FileName)
 bool FIL_SaveCSV(const char *FileName, const char *Header, const char *Delimiter, size_t Length, size_t Count, ...)
 {
     // Allocate memory for list of lists and types
-    void **VariableList = malloc(sizeof(void *) * Count);
+    void **VariableList = (void **)malloc(sizeof(void *) * Count);
 
     if (VariableList == NULL)
     {
@@ -152,7 +152,7 @@ bool FIL_SaveCSV(const char *FileName, const char *Header, const char *Delimiter
         return false;
     }
 
-    FIL_DataType *TypeList = malloc(sizeof(FIL_DataType) * Count);
+    FIL_DataType *TypeList = (FIL_DataType *)malloc(sizeof(FIL_DataType) * Count);
 
     if (TypeList == NULL)
     {
